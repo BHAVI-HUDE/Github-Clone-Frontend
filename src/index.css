@@ -1,0 +1,216 @@
+/* CSS Reset (minimal) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base typography */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  background-color: #f6f8fa;
+  color: #24292f;
+  line-height: 1.5;
+}
+
+/* Links */
+a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  color: #24292f;
+}
+
+/* Buttons (base) */
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Inputs */
+input,
+textarea {
+  font-family: inherit;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+/* Buttons */
+button {
+  background-color: #2da44e;
+  color: #ffffff;
+  border: 1px solid rgba(27, 31, 36, 0.15);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+button:hover {
+  background-color: #2c974b;
+}
+
+button:disabled {
+  background-color: #94d3a2;
+  cursor: not-allowed;
+}
+
+/* Secondary / destructive buttons */
+button.danger {
+  background-color: #cf222e;
+}
+
+button.danger:hover {
+  background-color: #a40e26;
+}
+
+
+/* Inputs & textarea */
+input,
+textarea {
+  width: 100%;
+  padding: 6px 8px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+a {
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: #0550ae;
+}
+
+ /*My custom styles  */
+.signup{
+  justify-content:center;
+  position:relative;
+  top:50px;
+  left:480px;
+  width:350px;
+
+}
+ #git-icon{
+  width:40px;
+  height:40px;
+  position:relative;
+  top:10px;
+  left:18px;
+ }
+ 
+ .signup-card{
+  position:relative;
+  top:25px;
+ }
+.signup-header{
+  position:relative;
+  left:140px;
+}
+.below-signup{
+  height:60px;
+  position:relative;
+  top:40px;
+  padding-left:60px;
+}
+ #form-labels{
+  display:flex;
+  justify-content:center;
+}
+
+#submit-btn{
+  position:relative;
+  left:35px;
+  padding-left:100px;
+  padding-right: 100px;
+}
+#git-icon-dashboard{
+  width:30px;
+  height:30px;
+  position:relative;
+  left:5px;
+}
+
+.top-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative; /* NOT absolute */
+  overflow:visible;
+}
+
+.nav-search{
+  display:flex;
+  flex-direction:row;
+}
+.nav-search .search-btn{
+  width:100px;
+  height:35px;
+  margin-left:10px;
+  position:relative;
+  top:5px;
+}
+
+.top-nav-left p {
+ padding:5px;
+ font-weight:bold;
+}
+
+
+/* Create New Repo Page */
+
+.create-new-repo{
+  width:500px;
+  position:relative;
+  left:450px;
+  top:70px;
+}
+.nav-profile img{
+  height:40px;
+  width:40px;
+}
+
+.repo-tabs {
+  display: flex;
+  gap: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 12px;
+}
+
+.repo-tabs button.active {
+  font-weight: 600;
+  border-bottom: 2px solid black;
+}
+
+.issue-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+
+
