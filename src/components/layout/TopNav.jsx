@@ -143,7 +143,7 @@ function TopNav() {
             title="Profile"
           >
             <img 
-              src={user.avatar || "/default-avatar.png"}
+              src={user.avatar || "/assets/defaultAvatar.png"}
               alt="profile"
               className="nav-avatar"
 
