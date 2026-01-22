@@ -70,10 +70,12 @@ function Profile() {
         throw new Error(data.message || "Avatar upload failed");
       }
 
-        setUser((prev) => ({
-      ...prev,
-      avatar: `${data.avatar}?t=${Date.now()}`,
-    }));
+        setUser((prev) =>
+  prev
+    ? { ...prev, avatar: `${data.avatar}?t=${Date.now()}` }
+    : prev
+);
+
 
 
       
