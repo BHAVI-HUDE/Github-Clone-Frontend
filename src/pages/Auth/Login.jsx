@@ -40,7 +40,7 @@ function Login() {
     return (
         <div className="signup">
              <div className="signup-header">
-      <img src="/github_733609.png" id = "git-icon"/>
+      <img src="/assets/github_733609.png" id = "git-icon"/>
 
       <br></br><br></br>
       <h2>Log In</h2>
