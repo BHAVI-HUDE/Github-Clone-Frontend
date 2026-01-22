@@ -76,7 +76,7 @@ function TopNav() {
       onClick={() => navigate("/")}
        style={{cursor:"pointer"}}
       >
-        <img src="/github_733609.png" id = "git-icon-dashboard"/>
+        <img src="/assets/github_733609.png"/>
 
         <p>
           GitHub
