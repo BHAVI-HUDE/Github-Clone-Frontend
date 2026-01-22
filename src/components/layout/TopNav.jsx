@@ -144,12 +144,13 @@ function TopNav() {
             style={{cursor:"pointer"}}
             title="Profile"
           >
-            <img 
-              src={user.avatar || "/assets/defaultAvatar.png"}
+            <img
+              src={user?.avatar || "/assets/defaultAvatar.png"}
               alt="profile"
               className="nav-avatar"
-
+              style={{ borderRadius: "50%" }}
             />
+
             
           </div>
         )}
