@@ -8,7 +8,6 @@ const API_URL = import.meta.env.VITE_API_BASE_URL;
 function Profile() {
   const { id } = useParams();
 
-  //  STATE 
   const [user, setUser] = useState(null);
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,9 +17,8 @@ function Profile() {
   const [bio, setBio] = useState("");
 
   const avatarInputRef = useRef(null);
-  
 
-  // FETCH PROFILE 
+  // FETCH PROFILE
   useEffect(() => {
     async function fetchProfile() {
       try {
@@ -45,24 +43,19 @@ function Profile() {
     fetchProfile();
   }, [id]);
 
-  //  AVATAR UPLOAD 
+  // AVATAR UPLOAD
   const handleAvatarUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
-
-
 
     const formData = new FormData();
     formData.append("avatar", file);
 
     try {
-      const res = await fetch(
-        `${API_URL}/user/${id}/avatar`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const res = await fetch(`${API_URL}/user/${id}/avatar`, {
+        method: "POST",
+        body: formData,
+      });
 
       const data = await res.json();
 
@@ -70,15 +63,9 @@ function Profile() {
         throw new Error(data.message || "Avatar upload failed");
       }
 
-        setUser((prev) =>
-  prev
-    ? { ...prev, avatar: `${data.avatar}?t=${Date.now()}` }
-    : prev
-);
-
-
-
-      
+      setUser((prev) =>
+        prev ? { ...prev, avatar: `${data.avatar}?t=${Date.now()}` } : prev
+      );
     } catch (err) {
       alert(err.message);
     } finally {
@@ -86,7 +73,7 @@ function Profile() {
     }
   };
 
-  // UPDATE PROFILE 
+  // UPDATE PROFILE
   const handleProfileUpdate = async () => {
     try {
       const res = await fetch(`${API_URL}/user/updateProfile/${id}`, {
@@ -119,22 +106,14 @@ function Profile() {
 
   return (
     <div className="profile-page">
-
-      
-
       {/* LEFT COLUMN */}
       <div className="profile-left">
-        
-
-       {user && (
-          <img
-            src={user.avatar || "/assets/defaultAvatar.png"}
-            alt="profile"
-            className="nav-avatar"
-            style={{ borderRadius: "50%" }}
-          />
-        )}
-
+        <img
+          src={user?.avatar || "/assets/defaultAvatar.png"}
+          alt="avatar"
+          className="profile-avatar"
+          style={{ borderRadius: "50%" }}
+        />
 
         <button
           className="profile-avatar-btn"
@@ -176,9 +155,7 @@ function Profile() {
             <h2>{user.username}</h2>
             <p>{user.bio || "No bio added"}</p>
 
-            <button onClick={() => setEditing(true)}>
-              Edit profile
-            </button>
+            <button onClick={() => setEditing(true)}>Edit profile</button>
           </>
         )}
       </div>
@@ -187,40 +164,35 @@ function Profile() {
       <div className="profile-right">
         <h3>Repositories ({repos.length})</h3>
 
-        {repos.length === 0 && (
+        {repos.length === 0 ? (
           <p style={{ color: "#57606a" }}>
             This user has no repositories yet.
           </p>
+        ) : (
+          repos.map((repo) => (
+            <div key={repo._id} className="repo-card">
+              <div className="repo-info">
+                <Link to={`/repo/${repo._id}`} className="repo-name">
+                  {repo.name}
+                </Link>
+                <p className="repo-desc">
+                  {repo.description || "No description"}
+                </p>
+              </div>
+              <span className="repo-visibility">
+                {repo.isPrivate ? "Private" : "Public"}
+              </span>
+            </div>
+          ))
         )}
-
-        {repos.map((repo) => (
-        <div key={repo._id} className="repo-card">
-          <div className="repo-info">
-            <Link to={`/repo/${repo._id}`} className="repo-name">
-              {repo.name}
-            </Link>
-
-            <p className="repo-desc">
-              {repo.description || "No description"}
-            </p>
-          </div>
-
-          <span className="repo-visibility">
-            {repo.isPrivate ? "Private" : "Public"}
-          </span>
-        </div>
-        
-      ))}
-
       </div>
 
-        <div className="heatmap">
-        {/* ✅ Activity Heatmap */}
-      <ActivityHeatmap />
+      {/* HEATMAP */}
+      <div className="heatmap">
+        <ActivityHeatmap />
       </div>
     </div>
   );
 }
 
 export default Profile;
-
