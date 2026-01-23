@@ -126,11 +126,15 @@ function Profile() {
       <div className="profile-left">
         
 
-        <img
-          src={user.avatar || "/defaultAvatar.png"}
-          alt="avatar"
-          className="profile-avatar"
-        />
+       {user && (
+          <img
+            src={user.avatar || "/assets/defaultAvatar.png"}
+            alt="profile"
+            className="nav-avatar"
+            style={{ borderRadius: "50%" }}
+          />
+        )}
+
 
         <button
           className="profile-avatar-btn"
