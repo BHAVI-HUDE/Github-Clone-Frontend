@@ -64,12 +64,12 @@ function TopNav() {
         onClick={() => navigate("/")}
         style={{ cursor: "pointer" }}
       >
-        <img
-          src={user?.avatar || "/assets/defaultAvatar.png"}
-          alt="profile"
-          className="nav-avatar"
-          style={{ borderRadius: "50%" }}
+        <img 
+          src="/assets/github_733609.png" 
+          alt="GitHub Logo" 
+          style={{ height: "40px", width: "40px" }} 
         />
+
         <p>GitHub</p>
       </div>
 
