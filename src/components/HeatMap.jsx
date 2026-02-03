@@ -39,9 +39,9 @@ const ActivityHeatmap = () => {
   }, []);
 
   return (
-    <div style={{ marginTop: "24px" }}>
+    <div className="heatmap-section">
       <h4>Contribution activity</h4>
-
+      <div className="heatmap-scroll" aria-label="Contribution activity heatmap">
       <HeatMap
         value={activityData}
         startDate={new Date(activityData[0]?.date)}
@@ -63,25 +63,16 @@ const ActivityHeatmap = () => {
           </rect>
         )}
       />
+      </div>
 
       {/* Legend */}
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "6px",
-          marginTop: "8px",
-          fontSize: "12px",
-          color: "#57606a",
-        }}
-      >
+      <div className="heatmap-legend">
         <span>Less</span>
         {[0, 1, 2, 3, 4].map((level) => (
           <span
             key={level}
+            className="heatmap-legend-swatch"
             style={{
-              width: "12px",
-              height: "12px",
               backgroundColor: [
                 "#ebedf0",
                 "#9be9a8",
@@ -89,7 +80,6 @@ const ActivityHeatmap = () => {
                 "#30a14e",
                 "#216e39",
               ][level],
-              borderRadius: "2px",
             }}
           />
         ))}
