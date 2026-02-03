@@ -6,7 +6,7 @@ const RepoList = ({ repos = [] }) => {
   }
 
   return (
-    <div>
+    <div className="repo-list">
       {repos.map((repo) => (
         <RepoCard
           key={repo._id || repo.id}
