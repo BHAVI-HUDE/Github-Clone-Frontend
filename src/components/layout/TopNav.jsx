@@ -47,17 +47,7 @@ function TopNav() {
   }, [userId]);
 
   return (
-    <header
-      style={{
-        height: "56px",
-        borderBottom: "1px solid #d0d7de",
-        backgroundColor: "#ffffff",
-        display: "flex",
-        alignItems: "center",
-        padding: "0 16px",
-        justifyContent: "space-between",
-      }}
-    >
+   <header className = "top-nav">
       {/* Left */}
       <div
         className="top-nav-left"
