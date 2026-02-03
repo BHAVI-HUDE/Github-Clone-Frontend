@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 function RepoCard({ repo }) {
    if (!repo) return null;
   return (
-    <div className="card"
-      style={{
-        marginBottom: "16px",
-      }}
-    >
+    <div className="card repo-card">
       <Link to={`/repo/${repo._id}`}>
         <h3>{repo.name}</h3>
       </Link>
