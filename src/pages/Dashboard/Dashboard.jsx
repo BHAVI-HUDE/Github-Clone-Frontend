@@ -16,10 +16,10 @@ function Dashboard() {
  if(error) return <p style ={{color:"red"}}>{error}</p>;
 
  return (
-    <>
+    <div className="dashboard">
      <RepoList repos={repos} />
      <ActivityHeatmap />
-    </>
+    </div>
   );
   } 
 
