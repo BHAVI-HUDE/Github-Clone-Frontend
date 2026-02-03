@@ -70,7 +70,7 @@ function TopNav() {
           style={{ height: "40px", width: "40px" }} 
         />
 
-        <p>GitHub</p>
+        <p>GitForge</p>
       </div>
 
       {/* Center */}
