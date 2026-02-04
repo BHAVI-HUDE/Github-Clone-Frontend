@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 
@@ -8,7 +8,6 @@ const API_URL = import.meta.env.VITE_API_BASE_URL;
 function TopNav() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-  const location = useLocation();
   const userId = localStorage.getItem("userId");
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -47,10 +46,9 @@ function TopNav() {
     fetchUserProfile();
   }, [userId]);
 
-  const isDashboard = location.pathname === "/dashboard";
   
   return (
-   <header className = {`top-nav-left${isDashboard ? " top-nav-left--dashboard" : ""}`}>
+   <header className = "top-nav">
       {/* Left */}
       <div
         className="top-nav-left"
