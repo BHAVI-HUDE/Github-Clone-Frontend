@@ -76,6 +76,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    background: #f97316;
+    border-color: #f97316;
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
   }
 
   .sidebar__close {
