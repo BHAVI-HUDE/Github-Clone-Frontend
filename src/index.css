@@ -178,7 +178,9 @@ a:hover {
   flex-direction:row;
   align-items: center;
   gap: 8px;
-  flex: 1 1 360px;
+  flex: 0 1 520px;
+  margin: 0 auto;
+  justify-content: center;
 }
 .nav-search .search-btn{
   width: auto;
