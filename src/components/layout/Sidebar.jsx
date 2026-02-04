@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { apiRequest } from "../../services/api";
 
-function Sidebar() {
+function Sidebar({ isOpen, onClose }) {
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -24,13 +24,16 @@ function Sidebar() {
 
   return (
     <aside
-      style={{
-        borderRight: "1px solid #d0d7de",
-        padding: "20px 50px",
-        backgroundColor: "#f6f8fa",
-       
-      }}
+     className={`sidebar ${isOpen ? "" : "sidebar--closed"}`}
     >
+      <button
+        type="button"
+        onClick={onClose}
+        aria-label="Close sidebar"
+        className="sidebar__close"
+      >
+        ✕
+      </button>
       <strong>Your Repositories</strong>
 
       {loading && <p style={{ marginTop: "12px" }}>Loading...</p>}
@@ -53,4 +56,3 @@ function Sidebar() {
 }
 
 export default Sidebar;
-
