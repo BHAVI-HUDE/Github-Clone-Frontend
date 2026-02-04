@@ -22,13 +22,25 @@
   top: 16px;
   left: 16px;
   z-index: 1100;
-  border: 1px solid #d0d7de;
-  background: #ffffff;
+  border: 1px solid #1f6feb;
+  background: #1f6feb;
   border-radius: 6px;
   padding: 6px 10px;
   font-size: 18px;
   cursor: pointer;
   display: none;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(31, 111, 235, 0.25);
+}
+
+.sidebar-toggle:hover {
+  background: #1a5fd0;
+  border-color: #1a5fd0;
+}
+
+.sidebar-toggle:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
 }
 
 .sidebar__close {
