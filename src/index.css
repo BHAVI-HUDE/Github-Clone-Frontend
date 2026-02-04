@@ -178,9 +178,7 @@ a:hover {
   flex-direction:row;
   align-items: center;
   gap: 8px;
-  flex: 0 1 520px;
-  margin: 0 auto;
-  justify-content: center;
+  flex: 1 1 360px;
 }
 .nav-search .search-btn{
   width: auto;
@@ -282,7 +280,7 @@ a:hover {
 }
 
 @media (max-width: 600px) {
-   .top-nav-left--dashboard {
+   .top-nav-left {
     margin-left: 44px;
   }
   
