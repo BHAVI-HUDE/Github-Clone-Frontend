@@ -282,7 +282,7 @@ a:hover {
 }
 
 @media (max-width: 600px) {
-   .top-nav-left {
+   .top-nav-left--dashboard {
     margin-left: 44px;
   }
   
