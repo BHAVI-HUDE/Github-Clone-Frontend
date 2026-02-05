@@ -17,8 +17,10 @@ function Dashboard() {
 
  return (
     <div className="dashboard">
-     <RepoList repos={repos} />
-     <ActivityHeatmap />
+     <div className="dashboard-content">
+        <RepoList repos={repos} />
+        <ActivityHeatmap />
+      </div>
     </div>
   );
   } 
