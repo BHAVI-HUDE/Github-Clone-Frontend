@@ -19,7 +19,7 @@ function Dashboard() {
     <div className="dashboard">
      <div className="dashboard-content">
         <RepoList repos={repos} />
-        <ActivityHeatmap />
+        <ActivityHeatmap rectSize={12} space={2}/>
       </div>
     </div>
   );
