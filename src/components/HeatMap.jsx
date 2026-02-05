@@ -30,7 +30,7 @@ const generateFakeActivity = () => {
   return data;
 };
 
-const ActivityHeatmap = () => {
+const ActivityHeatmap = ({ rectSize = 14, space = 3}) => {
   const [activityData, setActivityData] = useState([]);
 
   useEffect(() => {
@@ -45,8 +45,8 @@ const ActivityHeatmap = () => {
       <HeatMap
         value={activityData}
         startDate={new Date(activityData[0]?.date)}
-        rectSize={14}
-        space={3}
+        rectSize={rectSize}
+        space={space}
         rectProps={{ rx: 2 }}
         panelColors={{
           0: "#ebedf0",
