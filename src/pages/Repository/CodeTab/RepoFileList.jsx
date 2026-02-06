@@ -2,6 +2,7 @@ const RepoFileList = ({
   items,
   onItemClick,
   onDeleteItem,
+  canEdit,
 }) => {
   if (!items.length) {
     return (
@@ -24,15 +25,17 @@ const RepoFileList = ({
           </span>
 
           <span>{item.lastCommit || "-"}</span>
-
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onDeleteItem(item);
-            }}
-          >
-            Delete
-          </button>
+          {canEdit && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                onDeleteItem(item);
+              }}
+            >
+              Delete
+            </button>
+          )}
+          
         </div>
       ))}
     </div>
