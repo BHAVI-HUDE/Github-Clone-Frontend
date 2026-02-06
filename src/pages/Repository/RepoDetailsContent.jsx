@@ -13,25 +13,26 @@ function RepoDetailsContent() {
   const { id } = useParams();
 
 const {
-  repo,
-  items,
-  currentPath,
-  fileView,
-  loading,
-  error,
-  activeTab,
-  setActiveTab,
-  issues,
-  showNewIssueForm,
-  setShowNewIssueForm,
-  issueTitle,
-  setIssueTitle,
-  issueDescription,
-  setIssueDescription,
-  fileInputRef,
-  handlers,
-} = useRepoDetails(id);
-
+    repo,
+    ownerName,
+    isOwner,
+    items,
+    currentPath,
+    fileView,
+    loading,
+    error,
+    activeTab,
+    setActiveTab,
+    issues,
+    showNewIssueForm,
+    setShowNewIssueForm,
+    issueTitle,
+    setIssueTitle,
+    issueDescription,
+    setIssueDescription,
+    fileInputRef,
+    handlers,
+  } = useRepoDetails(id);
   /* =========================
      Render Guards
   ========================== */
@@ -43,6 +44,8 @@ const {
     <div className="repo-page">
       <RepoHeader
         repo={repo}
+        ownerName={ownerName}
+        isOwner={isOwner}
         activeTab={activeTab}
         onAddFile={handlers.handleAddFile}
         onAddFolder={handlers.handleAddFolder}
@@ -79,6 +82,7 @@ const {
           onItemClick={handlers.handleItemClick}
           onDeleteItem={handlers.handleDelete}
           onGoBack={handlers.goBack}
+           canEdit={isOwner}
         />
 
       )}
