@@ -9,6 +9,7 @@ const CodeTab = ({
   onItemClick,
   onDeleteItem,
   onGoBack,
+   canEdit,
 }) => {
   return (
     <>
@@ -24,6 +25,7 @@ const CodeTab = ({
           items={items}
           onItemClick={onItemClick}
           onDeleteItem={onDeleteItem}
+           canEdit={canEdit}
         />
       )}
     </>
