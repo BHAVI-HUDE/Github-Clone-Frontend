@@ -14,6 +14,8 @@ export function useRepoDetails(id) {
      State
   ========================== */
   const [repo, setRepo] = useState(null);
+  const [ownerName, setOwnerName] = useState("");
+  const [ownerId, setOwnerId] = useState("");
   const [items, setItems] = useState([]);
   const [currentPath, setCurrentPath] = useState("");
   const [fileView, setFileView] = useState(null);
@@ -26,6 +28,42 @@ export function useRepoDetails(id) {
   const [showNewIssueForm, setShowNewIssueForm] = useState(false);
   const [issueTitle, setIssueTitle] = useState("");
   const [issueDescription, setIssueDescription] = useState("");
+
+  const resolveOwnerInfo = async (repoData) => {
+    if (!repoData?.owner) {
+      setOwnerName("");
+      setOwnerId("");
+      return;
+    }
+
+    if (typeof repoData.owner === "object") {
+      const ownerIdentifier =
+        repoData.owner._id || repoData.owner.id || "";
+      setOwnerId(ownerIdentifier);
+      setOwnerName(
+        repoData.owner.username ||
+          repoData.owner.name ||
+          repoData.owner.email ||
+          ownerIdentifier
+      );
+      return;
+    }
+
+    setOwnerId(repoData.owner);
+    try {
+      const data = await apiRequest(
+        `/user/${repoData.owner}/profile`
+      );
+      setOwnerName(
+        data.user?.username ||
+          data.user?.name ||
+          data.user?.email ||
+          repoData.owner
+      );
+    } catch (err) {
+      setOwnerName(repoData.owner);
+    }
+  };
 
   /* =========================
      Path Ref Sync
@@ -64,6 +102,7 @@ export function useRepoDetails(id) {
       try {
         const data = await apiRequest(`/repo/${id}`);
         setRepo(data.repo);
+        await resolveOwnerInfo(data.repo);
       } catch (err) {
         setError(err.message);
       }
@@ -284,6 +323,10 @@ export function useRepoDetails(id) {
 
   return {
     repo,
+     ownerName,
+    isOwner:
+      !!ownerId &&
+      ownerId === localStorage.getItem("userId"),
     items,
     currentPath,
     fileView,
