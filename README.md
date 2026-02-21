@@ -1,4 +1,4 @@
-🧑‍💻 GitHub Clone – Frontend
+🧑‍💻 GitForge – Frontend
 
 A GitHub-Inspired Frontend Web Application
 
@@ -8,7 +8,7 @@ A GitHub-Inspired Frontend Web Application
 
 📌 Overview
 
-The GitHub Clone Frontend is a React-based web application that replicates core GitHub user interface features, including repositories, profiles, dashboards, and navigation workflows.
+The GitForge is a React-based web application that replicates core GitHub user interface features, including repositories, profiles, dashboards, and navigation workflows.
 
 This project focuses on frontend architecture, component-based design, API integration, and responsive UI development, closely mirroring real-world GitHub interactions while consuming backend services through REST APIs.
 
@@ -73,10 +73,6 @@ Github-Clone-Frontend/
 🎯 Integrated REST APIs into a frontend application
 🎯 Strengthened understanding of routing and component reuse
 🎯 Gained hands-on experience with frontend deployment on AWS Amplify
-
-📄 License
-
-This project is licensed under the MIT License and is intended for learning and educational purposes.
 
 👨‍💻 Author
 
