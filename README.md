@@ -4,7 +4,7 @@ A GitHub-Inspired Frontend Web Application
 
 🔗 Live Demo: https://main.dribt8w8mk1bj.amplifyapp.com/
 
-📁 Repository: https://github.com/BHAVI-HUDE/Github-Clone-Frontend
+📁 Repository: https://github.com/BHAVI-HUDE/GitForge-Frontend
 
 📌 Overview
 
